@@ -1,8 +1,8 @@
 import React from 'react';
-import HideRoute from '../components/hinder/HideRoute';
 
 //Components
 import Proyectos from '../components/proyectos/Proyectos'
+import HideRoute from '../components/hinder/HideRoute';
 
 const proyectos = () => {
     return (

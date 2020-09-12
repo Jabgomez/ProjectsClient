@@ -2,10 +2,12 @@ import React from 'react';
 
 //Components
 import Login from '../components/auth/Login'
+import Redirect from '../components/hinder/Redirect'
 
-const login = () => {
+const login = () => {  
+
     return (
-        <Login/>  
+        <Redirect component={Login}></Redirect>
     );
 }
  

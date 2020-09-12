@@ -138,7 +138,8 @@ const AuthState  = (props) => {
 
             registrarUsuario,
             iniciarSesion,
-            cerrarSesion
+            cerrarSesion,
+            revisarAutenticacion
         }}>{props.children}
         </AuthContext.Provider>
     );

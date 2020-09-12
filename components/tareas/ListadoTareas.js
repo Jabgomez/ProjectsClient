@@ -43,7 +43,7 @@ const ListadoTareas = () => {
                 }
             </ul>
 
-            <button type="button" className="btn btn-primario" onClick={() => eliminarProyecto(proyectoActual.id)}>Eliminar proyecto &times;</button>
+            <button type="button" className="btn btn-primario" onClick={() => eliminarProyecto(proyectoActual._id)}>Eliminar proyecto &times;</button>
         </>
     );
 }

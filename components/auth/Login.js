@@ -1,5 +1,4 @@
 import React, { useState, useContext, useEffect } from 'react';
-import {useRouter} from 'next/router'
 import Link from 'next/link'
 
 //Components
@@ -7,25 +6,20 @@ import AlertaContext from '../../context/alertas/alertaContext';
 import AuthContext from '../../context/autenticacion/authContext'
 
 const Login = () => {
-    const router = useRouter();
 
     //Importar Context
     const alertaContext = useContext(AlertaContext);
     const {alerta, mostrarAlerta} = alertaContext;
 
     const authContext = useContext(AuthContext);
-    const { mensaje, autenticado, iniciarSesion } = authContext;
+    const { mensaje, iniciarSesion } = authContext;
 
     useEffect(()=>{
-        if(autenticado){
-            router.push('/proyectos')
-        }
-
         if(mensaje){
             mostrarAlerta(mensaje.msg, mensaje.categoria)
         }
 
-    },[mensaje, autenticado]);
+    },[mensaje]);
 
     //State
     const [user, setUser] = useState({
