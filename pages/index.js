@@ -7,9 +7,5 @@ export default function Home() {
         router.push('/login');
     },[])
 
-    return (
-            <div className="container">
-                <h1>Hola</h1>
-            </div>
-    )
+    return null;
 }

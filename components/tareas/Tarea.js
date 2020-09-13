@@ -7,7 +7,7 @@ import tareaContext from '../../context/tareas/tareaContext'
 const Tarea = ({tarea}) => {
     //obtener el context de las tareas
     const tareasContext = useContext(tareaContext);
-    const { eliminarTarea, obtenerTareas, cambiarEstadoTarea, guardarTareaActual } = tareasContext;
+    const { eliminarTarea, obtenerTareas, editarTarea, guardarTareaActual } = tareasContext;
 
     //obtener el context de proyecto
     const proyectosContext = useContext(proyectoContext);
@@ -16,9 +16,9 @@ const Tarea = ({tarea}) => {
     const [proyectoActual] = proyecto;
 
     //Eliminar
-    const eliminar = (id) => {
-        eliminarTarea(id);
-        obtenerTareas(proyectoActual.id);
+    const eliminar = (_id) => {
+        eliminarTarea(_id, proyectoActual._id);
+        obtenerTareas(proyectoActual._id);
     } 
 
     //Cambiar estado de la tarea
@@ -29,7 +29,7 @@ const Tarea = ({tarea}) => {
             tarea.estado = true;
         }
 
-        cambiarEstadoTarea(tarea);
+        editarTarea(tarea);
     }
 
     const seleccionar = (tarea) => {
@@ -53,7 +53,7 @@ const Tarea = ({tarea}) => {
             </div>
             <div className="acciones">
                 <button type="button" className="btn btn-primario" onClick={()=> seleccionar(tarea)}>Editar</button>
-                <button type="button" className="btn btn-secundario" onClick={()=> eliminar(tarea.id)}>Eliminar</button>
+                <button type="button" className="btn btn-secundario" onClick={()=> eliminar(tarea._id)}>Eliminar</button>
             </div>
         </li>
     );

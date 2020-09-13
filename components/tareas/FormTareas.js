@@ -58,17 +58,15 @@ const FormTareas = () => {
         //Verificar si esta editanto o agregando
         if(tareaActual === null) {
             //Agregar tarea
-            tarea.proyectoId = proyectoActual.id;
-            tarea.estado = false;
+            tarea.proyecto = proyectoActual._id;
             agregarTarea(tarea);
         } else {
             //Editar
             editarTarea(tarea);
         }
-
         
         //Actualizar las tareas
-        obtenerTareas(proyectoActual.id);
+        obtenerTareas(proyectoActual._id);
 
         //Reiniciar el form
         setTarea({
